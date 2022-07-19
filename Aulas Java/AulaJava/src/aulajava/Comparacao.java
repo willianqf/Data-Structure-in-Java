@@ -32,10 +32,17 @@ public class Comparacao {
 
         ///////////////////////////////Pegando valor /////////////////////////////////////////
         TempoInicial = System.currentTimeMillis();
+        /*
         for(int x = 0; x < lista.getTamanho(); x++)
         {
             //listaJava.add(x);
             lista.Pegar(x);
+        }
+        */
+        Interacoes<Integer> interaco = new Interacoes<Integer>(lista.getPrimeiro());
+        while(interaco.TemProximo())
+        {
+            interaco.PegarElemento().getValor();
         }
         TempoFinal = System.currentTimeMillis();
         System.out.println("Tempo para pegar os valores ListaOrdenada: "+(TempoFinal - TempoInicial)+"\n\n");
